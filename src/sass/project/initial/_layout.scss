@@ -1,21 +1,10 @@
 .mapp {
-  .container {
-    max-width: 960px;
-    overflow: hidden;
-    background-color: $c-app-background;
-    height: 100%;
-  }
-
-  footer {
-    @include margin($base-spacing null null null);
-    @include position(fixed, null 0 0 0);
-    z-index: 10;
-    max-width: 960px;
-  }
-  @media(max-height: 500px) {
-    footer {
-      @include position(static, null)
-    }
-  }
+	.container {
+		max-width: 960px;
+		overflow: hidden;
+		background-color: $c-app-background;
+		height: 100%;
+		@include padding(($base-spacing*2)($base-spacing*4));
+	}
 }
 
