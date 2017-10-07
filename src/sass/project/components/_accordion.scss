@@ -19,10 +19,10 @@
 		display: block;
 		transition: all $tr-duration ease;
 		user-select: none;
-		border-top: 1px solid $c-border-grey;
-		color: $c-accordion-content;
+		border-top: 1px solid $c-border;
+		color: $c-question-title;
 		font-size: 14px;
-		@include padding(null ($spacing*2))
+		@include padding(null ($base-spacing*2))
 
 	}
 	&__header {
@@ -31,7 +31,7 @@
 		align-items: center;
 		height: 40px;
 		cursor: pointer;
-		@include padding(null ($spacing*2))
+		@include padding(null ($base-spacing*2))
 	}
 	&__arrow {
 		display: inline-block;
@@ -51,28 +51,28 @@
 		user-select: none;
 	}
 	&__panel {
-		border-top: 1px solid $c-border-grey;
-		border-bottom: 1px solid $c-border-grey;
-		background-color: $c-accordion-background-closed;
-		@include padding(($spacing * 0.5) 0 null 0);
+		border-top: 1px solid $c-border;
+		border-bottom: 1px solid $c-border;
+		background-color: $c-light;
+		@include padding(($base-spacing * 0.5) 0 null 0);
 		transition: border $tr-duration ease, background-color $tr-duration ease;
 
 		&.active {
-			background-color: $c-accordion-background-open;
-			border-top: 1px solid $c-orange;
-			border-bottom: 1px solid $c-orange;
+			background-color: $c-bckg-active;
+			border-top: 1px solid $c-border-active;
+			border-bottom: 1px solid $c-border-active;
 			.accordion__arrow {
 				transform: rotate(180deg);
 				&-icon {
-					border-color: $c-orange;
+					border-color: $c-border-active;
 				}
 			}
 			.accordion__content {
 				max-height: 200px;
 				opacity: 1;
-				user-select: auto;
+				user-select: initial;
 				visibility: visible;
-				@include padding($spacing null);
+				@include padding($base-spacing null);
 			}
 			.accordion__label {
 

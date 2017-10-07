@@ -1,16 +1,22 @@
-$spacing: 10px;
+$base-spacing: 10px;
 $duration: 300ms;
 
 $tr-duration: $duration;
-$h-button: 50px;
-$h-header: 100px;
 
-$c-orange: #ff850b;
-$c-accordion-title: #acacac;
-$c-accordion-content: #77726b;
-$c-accordion-background-open: #fff7ec;
-$c-accordion-background-closed: #ffffff;
-$c-header-background: #f8f8f8;
-$c-header-title: #474747;
-$c-button-border: #f7f7f7;
-$c-border-grey: #efefef;
+$c-app-background:              #f3f3f3;
+$c-light:                       #ffffff;
+$c-border:                      #d8d8d8;
+$c-accordion-title:             #8c8c8d;
+$c-question-title:              #1f1f1f;
+$c-question-arrow:              #9c9c9c;
+
+$c-answer-category-title:       #a4a4a4;
+$c-answer-question-title:       #000000;
+$c-answer-content:              #4b4b4b;
+
+$c-border-active:               #60aeff;
+$c-bckg-active:                 #eff6ff;
+$c-accordion-title-active:      #4a4a4a;
+
+
+$h-accordion:                   70px;

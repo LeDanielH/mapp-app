@@ -5,14 +5,13 @@
 	height: 40px;
 	text-decoration: none;
 	color: black;
-	border: 1px solid $c-border-grey;
+	border: 1px solid $c-border;
 	background-color: white;
 	transition: background-color $tr-duration ease;
 	i {
-		margin-right: $spacing;
+		margin-right: $base-spacing;
 	}
 	&:hover {
-		background-color: $c-header-background;
-
+		background-color: $c-bckg-active;
 	}
 }
