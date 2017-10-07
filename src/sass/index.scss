@@ -1,0 +1,16 @@
+@import "bourbon";
+@import "~normalize-scss/sass/normalize";
+@include normalize();
+
+body {
+	font-family: sans-serif;
+}
+p {
+	color: red;
+	@include padding(40px);
+}
+
+ul {
+	display: flex;
+	flex-direction: column;
+}
