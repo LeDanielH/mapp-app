@@ -5,14 +5,18 @@
   "main": "webpack.config.js",
   "scripts": {
     "start": "webpack-dev-server",
-    "build": "webpack -p"
+    "build": "webpack -p",
+    "ghpages": "gh-pages -d dist",
+    "deploy": "npm run build && npm run ghpages"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/LeDanielH/mapp-app.git"
   },
   "keywords": [
-    "webpack", "pug", "VanillaJS"
+    "webpack",
+    "pug",
+    "VanillaJS"
   ],
   "author": "Daniel Zeman",
   "license": "ISC",
@@ -35,6 +39,8 @@
     "css-loader": "^0.28.7",
     "cssnano": "^3.10.0",
     "extract-text-webpack-plugin": "^3.0.1",
+    "gh-pages": "^1.0.0",
+    "html-webpack-harddisk-plugin": "^0.1.0",
     "html-webpack-inline-source-plugin": "0.0.9",
     "html-webpack-plugin": "^2.30.1",
     "node-sass": "^4.5.3",
