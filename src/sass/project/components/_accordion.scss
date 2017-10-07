@@ -1,9 +1,12 @@
+$big-arrow-size: 12px;
+
 .accordion {
 	max-height: 400px;
 	transition: max-height $tr-duration ease ($tr-duration * 0.5), opacity $tr-duration ease ($tr-duration * 0.5);
 	opacity: 0;
 	flex-grow: 0;
 	flex-shrink: 0;
+	@include margin(null null $base-spacing*2.5 null);
 
 	&.active {
 		max-height: initial;
@@ -17,7 +20,13 @@
 		visibility: hidden;
 		overflow: hidden;
 		display: block;
-		transition: all $tr-duration ease;
+		transition:
+				max-height $tr-duration ease,
+				visibility $tr-duration ease,
+				opacity $tr-duration ease,
+				border $tr-duration ease;
+
+		will-change: max-height, visibility, opacity, border;
 		user-select: none;
 		border-top: 1px solid $c-border;
 		color: $c-question-title;
@@ -29,40 +38,51 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		height: 40px;
+		height: 62px;
 		cursor: pointer;
 		@include padding(null ($base-spacing*2))
 	}
 	&__arrow {
 		display: inline-block;
 		transition: transform $tr-duration ease;
+		@include size(35px);
+		position: relative;
+		border: 2px solid $c-border;
+		border-radius: 50%;
 		&-icon {
-			@include size(7px);
+			@include position(absolute, 42% null null 50%);
+			@include size($big-arrow-size);
+			@include margin(-($big-arrow-size/2) null null (-($big-arrow-size/2)));
 			transform: rotate(-45deg);
 			transition: border $tr-duration ease;
-			border-left: 2px solid $c-accordion-title;
-			border-bottom: 2px solid $c-accordion-title;
+			will-change: border;
+			border-left: 2px solid $c-border;
+			border-bottom: 2px solid $c-border;
+			box-sizing: border-box;
 		}
 	}
 	&__label {
-		font-size: 13px;
+		font-size: 20px;
 		text-transform: uppercase;
-		font-weight: normal;
 		user-select: none;
+		color: $c-accordion-title;
 	}
 	&__panel {
-		border-top: 1px solid $c-border;
-		border-bottom: 1px solid $c-border;
+		border: 1px solid $c-border;
 		background-color: $c-light;
-		@include padding(($base-spacing * 0.5) 0 null 0);
+		border-radius: $bd-radius;
 		transition: border $tr-duration ease, background-color $tr-duration ease;
 
 		&.active {
-			background-color: $c-bckg-active;
-			border-top: 1px solid $c-border-active;
-			border-bottom: 1px solid $c-border-active;
+			border: 2px solid $c-border-active;
+			overflow: auto;
+			.accordion__header {
+				background-color: $c-bckg-active;
+				border-bottom: 1px solid $c-border-active;
+			}
 			.accordion__arrow {
 				transform: rotate(180deg);
+				border-color: $c-border-active;
 				&-icon {
 					border-color: $c-border-active;
 				}
@@ -75,7 +95,7 @@
 				@include padding($base-spacing null);
 			}
 			.accordion__label {
-
+				color: $c-accordion-title-active;
 			}
 		}
 	}
