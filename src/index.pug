@@ -1,15 +1,15 @@
 doctype html
 html(lang="en")
-	head
-		title = pageTitle
-	body
 
-		include partials/hello-world
+	include includes/head
 
-		- var values = ['Daniel', 'Adela', 'Oliver', 'Tobyas'];
-		ul
-			each val, index in values.length ? values : ['There are no values']
-				li(data-count=index, class='list-item') #{index} : #{val}
-					|
-					|
-					a(href="google.com") google.com
+	body.mapp
+		.container
+			article
+
+				include includes/accordion
+
+			article
+
+				include includes/answer
+
