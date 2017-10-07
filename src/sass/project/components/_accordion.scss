@@ -1,0 +1,83 @@
+.accordion {
+	max-height: 400px;
+	transition: max-height $tr-duration ease ($tr-duration * 0.5), opacity $tr-duration ease ($tr-duration * 0.5);
+	opacity: 0;
+	flex-grow: 0;
+	flex-shrink: 0;
+
+	&.active {
+		max-height: initial;
+		max-height: auto;
+		opacity: 1;
+	}
+
+	&__content {
+		max-height: 0;
+		opacity: 0;
+		visibility: hidden;
+		overflow: hidden;
+		display: block;
+		transition: all $tr-duration ease;
+		user-select: none;
+		border-top: 1px solid $c-border-grey;
+		color: $c-accordion-content;
+		font-size: 14px;
+		@include padding(null ($spacing*2))
+
+	}
+	&__header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		height: 40px;
+		cursor: pointer;
+		@include padding(null ($spacing*2))
+	}
+	&__arrow {
+		display: inline-block;
+		transition: transform $tr-duration ease;
+		&-icon {
+			@include size(7px);
+			transform: rotate(-45deg);
+			transition: border $tr-duration ease;
+			border-left: 2px solid $c-accordion-title;
+			border-bottom: 2px solid $c-accordion-title;
+		}
+	}
+	&__label {
+		font-size: 13px;
+		text-transform: uppercase;
+		font-weight: normal;
+		user-select: none;
+	}
+	&__panel {
+		border-top: 1px solid $c-border-grey;
+		border-bottom: 1px solid $c-border-grey;
+		background-color: $c-accordion-background-closed;
+		@include padding(($spacing * 0.5) 0 null 0);
+		transition: border $tr-duration ease, background-color $tr-duration ease;
+
+		&.active {
+			background-color: $c-accordion-background-open;
+			border-top: 1px solid $c-orange;
+			border-bottom: 1px solid $c-orange;
+			.accordion__arrow {
+				transform: rotate(180deg);
+				&-icon {
+					border-color: $c-orange;
+				}
+			}
+			.accordion__content {
+				max-height: 200px;
+				opacity: 1;
+				user-select: auto;
+				visibility: visible;
+				@include padding($spacing null);
+			}
+			.accordion__label {
+
+			}
+		}
+	}
+}
+

@@ -1,0 +1,21 @@
+.mapp {
+  &__container {
+    max-width: 960px;
+    overflow: hidden;
+    background-color: $c-header-background;
+    height: 100%;
+  }
+
+  footer {
+    @include margin($spacing null null null);
+    @include position(fixed, null 0 0 0);
+    z-index: 10;
+    max-width: 960px;
+  }
+  @media(max-height: 500px) {
+    footer {
+      @include position(static, null)
+    }
+  }
+}
+
