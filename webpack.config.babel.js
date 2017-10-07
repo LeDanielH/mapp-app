@@ -1,6 +1,7 @@
 // import * as HtmlWebpackPlugin from 'html-webpack-plugin';
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackInlineSourcePlugin = require('html-webpack-inline-source-plugin');
+const HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin');
 
 import * as webpack from 'webpack';//to access built-in plugins
 import * as path from 'path';
@@ -85,8 +86,10 @@ const config = {
 		new HtmlWebpackPlugin({
 			title: 'index.html',
 			template: './src/index.pug',
-			inlineSource: prod ? '.js$' : ''
+			inlineSource: prod ? '.js$' : '',
+			alwaysWriteToDisk: true
 		}),
+		new HtmlWebpackHarddiskPlugin()
 
 		// new ExtractTextPlugin({
 		// 	filename: "[name].[contenthash].css",
@@ -94,7 +97,6 @@ const config = {
 		// })
 	],
 	devServer: {
-		contentBase: path.join(__dirname, "dist"),
 		open: true,
 		overlay: true,
 		port: 9876,
@@ -103,7 +105,6 @@ const config = {
 		historyApiFallback: true,
 		// noInfo: true,
 		inline: true,
-		hot: true,
 		watchOptions: {
 			// aggregateTimeout: 500,
 			// poll: 1000
