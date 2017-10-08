@@ -1,4 +1,18 @@
-- var categories = ['Beginning cooperation', 'Account management', 'Transaction management', 'Discounts Management'];
+//var categories = [
+//'Beginning cooperation', 'Account management', 'Transaction management', 'Discounts Management'
+//];
+
+-
+	var categories = [
+		{
+			title: "Beginning cooperation",
+			questions: "5"
+		},
+		{
+			title: "Beginning cooperation",
+			questions: "5"
+		}
+	]
 
 each category, index in categories.length ? categories : ['There are no values']
 	.accordion__panel
@@ -16,10 +30,10 @@ each category, index in categories.length ? categories : ['There are no values']
 							.question__arrow-icon
 					.answer__wrapper
 						header.answer__header
-							h4.answer__category Category
+							h4.answer__category= category
 								|
 								| (
-								span.answer__category-number= index+1 + '.1'
+								span.answer__category-number= index+1 + '.' + index+1 + '.'
 								| )
 								|
 

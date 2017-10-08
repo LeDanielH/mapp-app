@@ -70,6 +70,7 @@ $big-arrow-size: 12px;
 		color: $c-accordion-title;
 		@extend %anim-base;
 		@include will-change(color);
+		font-weight: normal;
 	}
 	&__panel {
 		border: 2px solid $c-border;
