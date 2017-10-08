@@ -2,5 +2,5 @@ process.env.NODE_ENV === 'production' ? module.exports = require('./prod.js') : 
 import '../sass/index.scss';
 import Accordion from './accordion';
 
-const mappAccordion = new Accordion('.accordion__header', '.accordion__panel');
+const mappAccordion = new Accordion('.accordion__header', '.accordion__panel', '.accordion__content');
 mappAccordion.init();
