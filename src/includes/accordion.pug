@@ -1,41 +1,35 @@
-//- var values = ['Daniel', 'Adela', 'Oliver', 'Tobyas'];
-//ul
-//	each val, index in values.length ? values : ['There are no values']
-//		li(data-count=index, class='list-item') #{index} : #{val}
-//			|
-//			|
-//			a(href="google.com") google.com
+- var categories = ['Beginning cooperation', 'Account management', 'Transaction management', 'Discounts Management'];
 
-.accordion__panel.active
-	header.accordion__header
-		h2.accordion__label 				Category 2
-		.accordion__arrow
-			.accordion__arrow-icon
-	article.accordion__content
-		ul.question__list
-			li.question__item
-				.question__wrapper
-					.question__number 	1.1.
-					.question 			How to initiate a transaction
-					.question__arrow
-						.question__arrow-icon
-				.answer__wrapper
-					header.answer__header
-						h4.answer__category Category
-							|
-							| (
-							span.answer__category-number 1.1
-							| )
-							|
+each category, index in categories.length ? categories : ['There are no values']
+	.accordion__panel
+		header.accordion__header
+			h2.accordion__label= index+1 + ' ' + category
+			.accordion__arrow
+				.accordion__arrow-icon
+		article.accordion__content
+			ul.question__list
+				li.question__item
+					.question__wrapper
+						.question__number 	1.1.
+						.question 			How to initiate a transaction
+						.question__arrow
+							.question__arrow-icon
+					.answer__wrapper
+						header.answer__header
+							h4.answer__category Category
+								|
+								| (
+								span.answer__category-number= index+1 + '.1'
+								| )
+								|
 
-						h2.answer__category-question
-					hr.answer__separator
-					article.answer
-						p Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam excepturi, aliquam repellendus
-						p aliquam repellendus, ipsum perferendis maiores nulla voluptas dolore obcaecati, nihil cum iste assumenda delectus officia? Possimus quos necessitatibus ab ipsam!
-						ul
-							li (a) The discount is expired and only can be found in the expired list
-							li (b) The discount is deleted by merchants
+							h2.answer__category-question
+						hr.answer__separator
+						article.answer
+							p Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam excepturi, aliquam repellendus
+							p aliquam repellendus, ipsum perferendis maiores nulla voluptas dolore obcaecati, nihil cum iste assumenda delectus officia? Possimus quos necessitatibus ab ipsam!
+							ul
+								li (a) The discount is expired and only can be found in the expired list
+								li (b) The discount is deleted by merchants
 
-						p ipsum perferendis maiores nulla voluptas dolore obcaecati, nihil cum iste assumenda delectus officia? Possimus quos necessitatibus ab ipsam!
-
+							p ipsum perferendis maiores nulla voluptas dolore obcaecati, nihil cum iste assumenda delectus officia? Possimus quos necessitatibus ab ipsam!
