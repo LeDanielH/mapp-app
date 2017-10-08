@@ -4,7 +4,10 @@
 		overflow: hidden;
 		background-color: $c-app-background;
 		height: 100%;
-		@include padding(($base-spacing*2)($base-spacing*4));
+		@include padding(($base-spacing*2)($base-spacing*2));
 	}
 }
 
+* {
+	box-sizing: border-box;
+}
