@@ -2,7 +2,9 @@ $big-arrow-size: 12px;
 
 .accordion {
 	max-height: 400px;
-	transition: max-height $tr-duration ease ($tr-duration * 0.5), opacity $tr-duration ease ($tr-duration * 0.5);
+	@extend %anim-base;
+	transition-duration: $tr-duration * 0.5;
+	@include will-change(max-height, opacity);
 	opacity: 0;
 	flex-grow: 0;
 	flex-shrink: 0;
@@ -20,13 +22,8 @@ $big-arrow-size: 12px;
 		visibility: hidden;
 		overflow: hidden;
 		display: block;
-		transition:
-				max-height $tr-duration ease,
-				visibility $tr-duration ease,
-				opacity $tr-duration ease,
-				border $tr-duration ease;
-
-		will-change: max-height, visibility, opacity, border;
+		@extend %anim-base;
+		@include will-change(max-height, visibility, opacity, border);
 		user-select: none;
 		border-top: 1px solid $c-border;
 		color: $c-question-title;
@@ -40,11 +37,17 @@ $big-arrow-size: 12px;
 		align-items: center;
 		height: 62px;
 		cursor: pointer;
-		@include padding(null ($base-spacing*2))
+		@include padding(null ($base-spacing*2));
+		background-color: $c-light;
+		box-sizing: border-box;
+		border-bottom: 1px solid $c-light;
+		@extend %anim-base;
+		@include will-change(background-color, border);
 	}
 	&__arrow {
 		display: inline-block;
-		transition: transform $tr-duration ease;
+		@extend %anim-base;
+		@include will-change(transform, border);
 		@include size(35px);
 		position: relative;
 		border: 2px solid $c-border;
@@ -53,9 +56,9 @@ $big-arrow-size: 12px;
 			@include position(absolute, 42% null null 50%);
 			@include size($big-arrow-size);
 			@include margin(-($big-arrow-size/2) null null (-($big-arrow-size/2)));
+			@extend %anim-base;
+			@include will-change(border);
 			transform: rotate(-45deg);
-			transition: border $tr-duration ease;
-			will-change: border;
 			border-left: 2px solid $c-border;
 			border-bottom: 2px solid $c-border;
 			box-sizing: border-box;
@@ -66,16 +69,38 @@ $big-arrow-size: 12px;
 		text-transform: uppercase;
 		user-select: none;
 		color: $c-accordion-title;
+		@extend %anim-base;
+		@include will-change(color);
 	}
 	&__panel {
-		border: 1px solid $c-border;
+		border: 2px solid $c-border;
 		background-color: $c-light;
 		border-radius: $bd-radius;
-		transition: border $tr-duration ease, background-color $tr-duration ease;
+		@include margin(null null $base-spacing*2 null);
+		@extend %anim-base;
+		@include will-change(border, background-color);
+
+		&:hover {
+			border: 2px solid $c-border-active;
+
+			.accordion__header {
+				background-color: $c-bckg-active;
+			}
+			.accordion__arrow {
+				border-color: $c-border-active;
+				&-icon {
+					border-color: $c-border-active;
+				}
+			}
+			.accordion__label {
+				color: $c-accordion-title-active;
+			}
+		}
 
 		&.active {
 			border: 2px solid $c-border-active;
 			overflow: auto;
+
 			.accordion__header {
 				background-color: $c-bckg-active;
 				border-bottom: 1px solid $c-border-active;
@@ -92,7 +117,6 @@ $big-arrow-size: 12px;
 				opacity: 1;
 				user-select: initial;
 				visibility: visible;
-				@include padding($base-spacing null);
 			}
 			.accordion__label {
 				color: $c-accordion-title-active;
