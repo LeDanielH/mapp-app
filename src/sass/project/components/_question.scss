@@ -1,4 +1,4 @@
-$sz-question-arrow: $sz-arrow - 2px;
+$sz-question-arrow: $sz-arrow;
 .question {
 	@include margin(null $base-spacing null null);
 	pointer-events: none;
@@ -11,7 +11,7 @@ $sz-question-arrow: $sz-arrow - 2px;
 		@include will-change(transform, opacity, visibility);
 		opacity: 1;
 		visibility: visible;
-		user-select: all;
+		user-select: initial;
 		pointer-events: initial;
 		@extend %anim-base;
 		transition-duration: $tr-duration * 1.5;
