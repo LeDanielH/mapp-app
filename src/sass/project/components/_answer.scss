@@ -22,4 +22,26 @@
 	&s {
 
 	}
+	&__arrow {
+		@include padding(null null $base-spacing null);
+		box-sizing: content-box;
+		transform: translate3d(0, 0, 0);
+		@include will-change(transform);
+		@extend %anim-base;
+		cursor: pointer;
+		&-icon {
+			@include size($sz-question-arrow);
+			border-left: 2px solid $c-border;
+			border-top: 2px solid $c-border;
+			transform: rotate(-45deg);
+			@include will-change(border, transform);
+			@extend %anim-base;
+		}
+		&:hover {
+			transform: translate3d(-$tr-letters, 0, 0);
+			.answer__arrow-icon {
+				border-color: $c-border-active;
+			}
+		}
+	}
 }

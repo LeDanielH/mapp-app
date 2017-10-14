@@ -106,6 +106,8 @@ mixin category(category, index)
 mixin answer(category, index)
 	each question, ind in category.questions
 		.answer__wrapper(id=`answer-${index+1}-${ind+1}` data-category=`${index+1}` data-question=`${ind+1}`)
+			.answer__arrow
+				.answer__arrow-icon
 			header.answer__header
 				h4.answer__category= category.title
 				|
