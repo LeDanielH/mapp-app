@@ -57,6 +57,7 @@
   },
   "dependencies": {
     "bourbon": "^4.3.4",
-    "normalize-scss": "^7.0.0"
+    "normalize-scss": "^7.0.0",
+    "smoothscroll-polyfill": "^0.4.0"
   }
 }
