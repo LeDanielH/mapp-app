@@ -100,7 +100,6 @@ const config = {
 		open: true,
 		overlay: true,
 		port: 9876,
-		host: "192.168.0.115", // home ip4, run ipconfig in CLI if you want to change
 		clientLogLevel: "warning",
 		historyApiFallback: true,
 		// noInfo: true,
