@@ -36,8 +36,9 @@ $big-arrow-size: $sz-arrow;
 	&__header {
 		display: flex;
 		align-items: center;
-		height: 54px;
+		height: $h-accordion;
 		cursor: pointer;
+		user-select: none;
 		@include padding(null ($base-spacing));
 		background-color: $c-light;
 		box-sizing: border-box;
@@ -51,7 +52,7 @@ $big-arrow-size: $sz-arrow;
 		margin-left: auto;
 		@extend %anim-base;
 		@include will-change(transform, border);
-		@include size(35px);
+		@include size(30px);
 		position: relative;
 		border: 2px solid $c-border;
 		border-radius: 50%;
@@ -68,22 +69,42 @@ $big-arrow-size: $sz-arrow;
 		}
 	}
 	&__label, &__number {
-		font-size: 18px;
+		font-size: 15px;
 		user-select: none;
 		color: $c-accordion-title;
 		@extend %anim-base;
 		@include will-change(color);
-		font-weight: normal;
+		font-weight: bold;
 	}
 	&__panel {
 		border: 2px solid $c-border;
 		background-color: $c-light;
 		border-radius: $bd-radius;
-		@include margin(null null $base-spacing*2 null);
+		@include margin(null null $base-spacing null);
 		@extend %anim-base;
 		@include will-change(border, background-color);
 		&:last-of-type {
 			@include margin(null null 0 null);
+		}
+		&:focus, &:active {
+			border: 2px solid $c-border;
+			background-color: $c-light;
+			.accordion {
+				&__header {
+					background-color: $c-light;
+					border-top: 1px solid transparent;
+					border-bottom: 1px solid transparent;
+				}
+				&__arrow {
+					border-color: $c-border;
+					&-icon {
+						border-color: $c-border;
+					}
+				}
+				&__label, &__number {
+					color: $c-accordion-title;
+				}
+			}
 		}
 
 		&:hover {
