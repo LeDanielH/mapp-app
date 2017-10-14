@@ -9,7 +9,6 @@ class Accordion {
 	handler(element) {
 		const accordion = element.parentNode;
 		const content = accordion.querySelector(`${this.content}`);
-		console.log(content);
 		const isActive = accordion.classList.contains('active');
 		if(isActive) {
 			accordion.classList.remove('active');
@@ -26,7 +25,6 @@ class Accordion {
 
 	getContentHeight(element) {
 		const content = element.children[0];
-		console.log(content);
 		return content.offsetHeight;
 	}
 
