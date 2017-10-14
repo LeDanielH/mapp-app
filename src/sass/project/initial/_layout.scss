@@ -5,6 +5,7 @@
 		background-color: $c-app-background;
 		height: 100%;
 		@include padding(($base-spacing*2)($base-spacing*2));
+		position: relative;
 	}
 }
 
