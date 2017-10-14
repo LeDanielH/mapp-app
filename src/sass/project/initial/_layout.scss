@@ -4,7 +4,8 @@
 		overflow: hidden;
 		background-color: $c-app-background;
 		height: 100%;
-		@include padding($pd-content);
+	}
+	&__wrapper {
 		position: relative;
 	}
 }
