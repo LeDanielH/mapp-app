@@ -1,4 +1,4 @@
-$big-arrow-size: 12px;
+$big-arrow-size: $sz-arrow;
 
 .accordion {
 	@extend %anim-base;
@@ -11,8 +11,12 @@ $big-arrow-size: 12px;
 
 	&.active {
 		max-height: initial;
-		max-height: auto;
 		opacity: 1;
+	}
+
+	&__number {
+		flex: 0 0 20px;
+		max-width: 20px;
 	}
 
 	&__content {
@@ -27,12 +31,10 @@ $big-arrow-size: 12px;
 		border-top: 1px solid $c-border;
 		color: $c-question-title;
 		font-size: 14px;
-		@include padding(null ($base-spacing*2))
 
 	}
 	&__header {
 		display: flex;
-		justify-content: space-between;
 		align-items: center;
 		height: 54px;
 		cursor: pointer;
@@ -46,6 +48,7 @@ $big-arrow-size: 12px;
 	}
 	&__arrow {
 		display: inline-block;
+		margin-left: auto;
 		@extend %anim-base;
 		@include will-change(transform, border);
 		@include size(35px);
@@ -64,8 +67,8 @@ $big-arrow-size: 12px;
 			box-sizing: border-box;
 		}
 	}
-	&__label {
-		font-size: 20px;
+	&__label, &__number {
+		font-size: 18px;
 		user-select: none;
 		color: $c-accordion-title;
 		@extend %anim-base;
@@ -79,23 +82,27 @@ $big-arrow-size: 12px;
 		@include margin(null null $base-spacing*2 null);
 		@extend %anim-base;
 		@include will-change(border, background-color);
+		&:last-of-type {
+			@include margin(null null 0 null);
+		}
 
 		&:hover {
 			border: 2px solid $c-border-active;
-
-			.accordion__header {
-				background-color: $c-bckg-active;
-				border-top: 1px solid $c-bckg-active;
-				border-bottom: 1px solid $c-bckg-active;
-			}
-			.accordion__arrow {
-				border-color: $c-border-active;
-				&-icon {
-					border-color: $c-border-active;
+			.accordion {
+				&__header {
+					background-color: $c-bckg-active;
+					border-top: 1px solid $c-bckg-active;
+					border-bottom: 1px solid $c-bckg-active;
 				}
-			}
-			.accordion__label {
-				color: $c-accordion-title-active;
+				&__arrow {
+					border-color: $c-border-active;
+					&-icon {
+						border-color: $c-border-active;
+					}
+				}
+				&__label, &__number {
+					color: $c-accordion-title-active;
+				}
 			}
 		}
 
@@ -103,26 +110,28 @@ $big-arrow-size: 12px;
 			border-color: $c-border-active;
 			overflow: auto;
 
-			.accordion__header {
-				background-color: $c-bckg-active;
-				border-top: 1px solid $c-bckg-active;
-				border-bottom: 1px solid $c-border-active;
-			}
-			.accordion__arrow {
-				transform: rotate(180deg);
-				border-color: $c-border-active;
-				&-icon {
-					border-color: $c-border-active;
+			.accordion {
+				&__header {
+					background-color: $c-bckg-active;
+					border-top: 1px solid $c-bckg-active;
+					border-bottom: 1px solid $c-border-active;
 				}
-			}
-			.accordion__content {
-				max-height: 200px;
-				opacity: 1;
-				user-select: initial;
-				visibility: visible;
-			}
-			.accordion__label {
-				color: $c-accordion-title-active;
+				&__arrow {
+					transform: rotate(180deg);
+					border-color: $c-border-active;
+					&-icon {
+						border-color: $c-border-active;
+					}
+				}
+				&__content {
+					max-height: 200px;
+					opacity: 1;
+					user-select: initial;
+					visibility: visible;
+				}
+				&__label, &__number {
+					color: $c-accordion-title-active;
+				}
 			}
 		}
 	}

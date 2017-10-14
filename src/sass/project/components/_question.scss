@@ -1,4 +1,6 @@
+$sz-question-arrow: $sz-arrow - 2px;
 .question {
+	@include margin(null $base-spacing null null);
 	&s {
 		width: 100%;
 		transform: translate3d(0, 0, 0);
@@ -6,6 +8,49 @@
 		@extend %anim-base;
 		.container__wrapper.active & {
 			transform: translate3d(-50%, 0, 0);
+		}
+	}
+	&__list {
+		@include padding(0);
+		list-style-type: none;
+		margin: 0;
+	}
+	&__item {
+		display: flex;
+		align-items: center;
+		border-bottom: 1px solid $c-border;
+		@include padding(($base-spacing*2));
+		cursor: pointer;
+		&:hover {
+			.question {
+				&__arrow {
+					transform: translate3d($tr-letters, 0, 0);
+					&-icon {
+						border-color: $c-border-active;
+					}
+				}
+			}
+		}
+	}
+	&__number {
+		flex: 0 0 35px;
+		max-width: 35px;
+		display: inline-block;
+	}
+	&__arrow {
+		flex: 0 0 $sz-question-arrow;
+		@include size($sz-question-arrow);
+		max-width: $sz-question-arrow;
+		margin-left: auto;
+		@include will-change(transform);
+		@extend %anim-base;
+		&-icon {
+			@include size(100%);
+			border-right: 2px solid $c-border;
+			border-top: 2px solid $c-border;
+			transform: rotate(45deg);
+			@include will-change(border);
+			@extend %anim-base;
 		}
 	}
 }
