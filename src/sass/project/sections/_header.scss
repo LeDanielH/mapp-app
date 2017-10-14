@@ -8,8 +8,8 @@
 			max-width: 100%;
 		}
 		background-color: $c-app-header;
-		@include padding(0 ($base-spacing*2));
-		@include size(100% $h-arrow);
+		@include padding(0 ($base-spacing));
+		@include size(100% $h-accordion);
 		transform: translate3d(0, 0, 0);
 		@include will-change(transform);
 		@extend %anim-base;
