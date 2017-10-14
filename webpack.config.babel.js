@@ -63,10 +63,17 @@ const config = {
 			},
 			{
 				test: /\.pug$/,
-				loader: 'pug-loader',
-				options: {
-					pretty: true
-				}
+				use: [
+					{
+						loader: 'babel-loader'
+					},
+					{
+						loader: 'pug-loader',
+						options: {
+							pretty: true
+						}
+					}
+				]
 			},
 			{
 				test: /\.(png|jpg)$/,
