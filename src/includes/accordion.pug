@@ -101,18 +101,23 @@ mixin category(category, index)
 							.question= question.title
 							.question__arrow
 								.question__arrow-icon
-						.answer__wrapper(id=`answer-${index}-${ind}`)
-							header.answer__header
-								h4.answer__category= category.title
-									|
-									| (
-									span.answer__category-number= index+1 + '.' + ind
-									| )
-									|
 
-								h2.answer__category-question= question.title
-							hr.answer__separator
-							article.answer!= question.answer
+
+mixin answer(category, index)
+	each question, ind in category.questions
+		.answer__wrapper(id=`answer-${index}-${ind}`)
+			header.answer__header
+				h4.answer__category= category.title
+				|
+				| (
+				span.answer__category-number= index + 1 + '.' + ind
+				| )
+				|
+
+				h2.answer__category-question= question.title
+			hr.answer__separator
+			article.answer!= question.answer
 
 each category, index in categories
 	+category(category, index)
+	+answer(category, index)
