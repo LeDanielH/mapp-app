@@ -1,25 +1,25 @@
 .answer {
 	&__wrapper {
-		width: 100%;
+		@include padding($pd-content);
 		position: absolute;
 		left: 100%;
 		top: 0;
 		height: 100vh;
-		opacity: 0;
-		visibility: hidden;
+		width: 100%;
 		transform: translate3d(0, 0, 0);
+		@include will-change(transform);
+		@extend %anim-base;
 		background-color: $c-light;
 		z-index: 2;
 		pointer-events: none;
 		user-select: none;
-		.question__item.active & {
-			@include will-change(transform, opacity, visibility);
-			@extend %anim-base;
+		&.active{
 			transform: translate3d(-100%, 0, 0);
 			pointer-events: auto;
 			user-select: all;
-			opacity: 1;
-			visibility: visible;
 		}
+	}
+	&s {
+
 	}
 }

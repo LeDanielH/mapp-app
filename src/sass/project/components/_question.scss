@@ -1,0 +1,11 @@
+.question {
+	&s {
+		width: 100%;
+		transform: translate3d(0, 0, 0);
+		@include will-change(transform);
+		@extend %anim-base;
+		.container__wrapper.active & {
+			transform: translate3d(-50%, 0, 0);
+		}
+	}
+}
