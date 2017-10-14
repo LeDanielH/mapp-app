@@ -95,13 +95,13 @@ mixin category(category, index)
 
 				each question, ind in category.questions
 
-					li.question__item
+					li.question__item(id=`question-${index}-${ind}`)
 						.question__wrapper
 							.question__number=  index+1 + '.' + ind
 							.question= question.title
 							.question__arrow
 								.question__arrow-icon
-						.answer__wrapper
+						.answer__wrapper(id=`answer-${index}-${ind}`)
 							header.answer__header
 								h4.answer__category= category.title
 									|
