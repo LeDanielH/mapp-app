@@ -35,8 +35,11 @@ const SlideOut = {
 		this.currentScroll = Math.max(document.body.scrollTop,document.documentElement.scrollTop, window.pageYOffset);
 	},
 
-	closeAnswer() {
+	closeAnswer(e) {
 		if(this.currentAnswer === null) return;
+		let matchesAnswerKiller = e.target.matches ? e.target.matches('.answer__killer') : event.target.msMatchesSelector('.answer__killer');
+		if (!matchesAnswerKiller) return;
+		e.preventDefault();
 		const wrapper = document.getElementById('mapp__wrapper');
 		this.currentAnswer.classList.remove('active');
 		this.currentAnswer = null;
@@ -53,8 +56,7 @@ const SlideOut = {
 	},
 	init() {
 		document.addEventListener('click', (e) => this.getAnwser(e));
-		const arrow = document.getElementById('app__arrow');
-		arrow.addEventListener('click', () => this.closeAnswer());
+		document.addEventListener('click', (e) => this.closeAnswer(e));
 	}
 };
 
