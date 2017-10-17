@@ -6,7 +6,33 @@ module.exports = [
 				title: "How to initiate a transaction",
 				answer: `<p>You open your wallet</p>
 							<p>You take out your card</p>
-							<p>And you pay</p>`
+							<p>And you pay</p>
+							<p>HC Pay is mobile and revolving credit wallet - customer gains credit limit after their
+							fully online and paperless application is approved by HCC</p>
+							<p>HC Pay is a universal credit purchase financing method - which can be used continuously for payments at supported POS</p>
+							<p>HC Pay is a discount platform - customers can see discounts provided by merchants and rate them.</p>
+							<p>HC Pay is mobile and revolving credit wallet - customer gains credit limit after their
+							fully online and paperless application is approved by HCC</p>
+							<p>HC Pay is a universal credit purchase financing method - which can be used continuously for payments at supported POS</p>
+							<p>HC Pay is a discount platform - customers can see discounts provided by merchants and rate them.</p>
+							<p>HC Pay is mobile and revolving credit wallet - customer gains credit limit after their
+							fully online and paperless application is approved by HCC</p>
+							<p>HC Pay is a universal credit purchase financing method - which can be used continuously for payments at supported POS</p>
+							<p>HC Pay is a discount platform - customers can see discounts provided by merchants and rate them.</p>
+							<p>HC Pay is mobile and revolving credit wallet - customer gains credit limit after their
+							fully online and paperless application is approved by HCC</p>
+							<br>
+							<p>HC Pay is a universal credit purchase financing method - which can be used continuously for payments at supported POS</p>
+							<p>HC Pay is a discount platform - customers can see discounts provided by merchants and rate them.</p>
+							<p>HC Pay is mobile and revolving credit wallet - customer gains credit limit after their
+							fully online and paperless application is approved by HCC</p>
+							<p>HC Pay is a universal credit purchase financing method - which can be used continuously for payments at supported POS</p>
+							<p>HC Pay is a discount platform - customers can see discounts provided by merchants and rate them.</p>
+							<br>
+							<p>HC Pay is mobile and revolving credit wallet - customer gains credit limit after their
+							fully online and paperless application is approved by HCC</p>
+							<p>HC Pay is a universal credit purchase financing method - which can be used continuously for payments at supported POS</p>
+							<p>HC Pay is a discount platform - customers can see discounts provided by merchants and rate them.</p>`
 			},
 			{
 				title: "What is HC Pay?",
