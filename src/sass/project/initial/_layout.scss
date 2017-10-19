@@ -1,7 +1,6 @@
 .mapp {
 	.container {
 		max-width: 960px;
-		overflow: hidden;
 		background-color: $c-app-background;
 		height: 100%;
 	}
@@ -16,4 +15,7 @@
 
 body {
 	font-family: Tahoma, sans-serif;
+
+	overflow: hidden;
+	overflow-y: auto;
 }
