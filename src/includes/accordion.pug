@@ -21,18 +21,19 @@ mixin category(category, index)
 mixin answer(category, index)
 	each question, ind in category.questions
 		.answer__wrapper(id=`answer-${index+1}-${ind+1}` data-category=`${index+1}` data-order=`${ind+1}`)
-			header.answer__header
-				h4.answer__category= category.title
-				|
-				| (
-				span.answer__category-number= `${index+1}.${ind+1}`
-				| )
-				|
+			.answer__container
+				header.answer__header
+					h4.answer__category= category.title
+					|
+					| (
+					span.answer__category-number= `${index+1}.${ind+1}`
+					| )
+					|
 
-				h2.answer__category-question= question.title
-				div.answer__close.answer__killer
-			hr.answer__separator
-			article.answer!= question.answer
+					h2.answer__category-question= question.title
+					div.answer__close.answer__killer
+				hr.answer__separator
+				article.answer!= question.answer
 
 
 .questions#questions
