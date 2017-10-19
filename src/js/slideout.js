@@ -27,8 +27,6 @@ const SlideOut = {
 				});
 			}, this.scrollDelay);
 		}
-
-
 	},
 
 	saveCurrentScroll() {
